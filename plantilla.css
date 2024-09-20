@@ -1,0 +1,43 @@
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #000000;
+    background-color: #7EC8E3;
+    margin-top: 0em;
+}
+
+header {
+    color: #FFFFFF;
+    background-color: #0000FF;
+}
+
+h1 {
+    font-size: 2.5em;
+        font-weight: 800;
+}
+  
+h2 {
+    font-size: 2em;
+}
+
+
+h3 {
+    font-size: 1.75em;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #A00000;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #7EC8E3;
+}
