@@ -41,3 +41,17 @@ header nav a {
     font-weight: bold;
     color: #7EC8E3;
 }
+
+@media screen and (max-width: 550px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+ 
+    header nav {
+      row-gap: 0.5em;
+      flex-direction: column;
+      margin-left: 5%;
+      margin-bottom: 5%;
+    }
+ }
