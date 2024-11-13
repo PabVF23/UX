@@ -29,8 +29,12 @@ h3 {
     text-decoration: underline;
 }
 
+h1 a:visited {
+    color: #FFFFFF;
+}
+
 a:visited {
-    color: #DB0000;
+    color: #FFE5E5;
 }
 
 header {
