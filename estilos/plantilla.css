@@ -46,6 +46,18 @@ header nav a {
     color: #7EC8E3;
 }
 
+header h1 {
+    margin-left: 5%;
+}
+
+header nav{
+    display: flex;
+    flex-flow: wrap;
+    column-gap: 0.5em;
+    align-items: flex-start;
+    margin-right: 5%;
+}
+
 @media screen and (max-width: 550px) {
     header {
       flex-direction: column;

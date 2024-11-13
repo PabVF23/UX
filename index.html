@@ -5,6 +5,8 @@
         <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="estilos/plantilla.css" />
         <title>Mi página</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="scripts/script.js"></script>
     </head>
     <body>
         <header>
@@ -14,11 +16,17 @@
                 <a href="sobremi.html">Sobre mí</a>
                 <a href="aficiones.html">Mis aficiones</a>
                 <a href="proyectos.html">Mis proyectos</a>
+                <a href="buscar.html">Buscar</a>
             </nav>
         </header>
     
         <main>
             <h2>Bienvenido a mi página</h2>
+
+            <article>
+                <input type="text" placeholder="Buscar" onkeyup="buscarTexto()" />
+            </article>
+            <article></article>
         </main>
     
         <footer>Universidad de Oviedo</footer>
