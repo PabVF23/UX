@@ -64,7 +64,7 @@ function buscarTexto() {
 }
 
 function mostrarResultados(resultados) {
-    let contenedorResultados = $("article").last()
+    let contenedorResultados = $("section")
     $(contenedorResultados).empty()
 
     if (Object.keys(resultados).length) {
@@ -72,10 +72,12 @@ function mostrarResultados(resultados) {
     }
 
     if (resultados["sobremi"]) {
-        $(contenedorResultados).append("<p>Sobre mí:</p>")
-        $(contenedorResultados).append("<ul></ul>")
+        $(contenedorResultados).append("<article></article>")
+        var secciónResultados = $(contenedorResultados).find("article").last()
+        $(secciónResultados).append("<h4>Sobre mí</h4>")
+        $(secciónResultados).append("<ul></ul>")
 
-        var list = $(contenedorResultados).find("ul").last()
+        var list = $(secciónResultados).find("ul")
 
         resultados["sobremi"].forEach(r => {
             $(list).append("<li>" + r + "</li>")
@@ -83,10 +85,12 @@ function mostrarResultados(resultados) {
     }
 
     if (resultados["aficiones"]) {
-        $(contenedorResultados).append("<p>Mis aficiones:</p>")
-        $(contenedorResultados).append("<ul></ul>")
+        $(contenedorResultados).append("<article></article>")
+        var secciónResultados = $(contenedorResultados).find("article").last()
+        $(secciónResultados).append("<h4>Mis aficiones</h4>")
+        $(secciónResultados).append("<ul></ul>")
 
-        var list = $(contenedorResultados).find("ul").last()
+        var list = $(secciónResultados).find("ul")
 
         resultados["aficiones"].forEach(r => {
             $(list).append("<li>" + r + "</li>")
@@ -94,10 +98,12 @@ function mostrarResultados(resultados) {
     }
 
     if (resultados["proyectos"]) {
-        $(contenedorResultados).append("<p>Mis proyectos:</p>")
-        $(contenedorResultados).append("<ul></ul>")
+        $(contenedorResultados).append("<article></article>")
+        var secciónResultados = $(contenedorResultados).find("article").last()
+        $(secciónResultados).append("<h4>Mis proyectos</h4>")
+        $(secciónResultados).append("<ul></ul>")
 
-        var list = $(contenedorResultados).find("ul").last()
+        var list = $(secciónResultados).find("ul")
 
         resultados["proyectos"].forEach(r => {
             $(list).append("<li>" + r + "</li>")
