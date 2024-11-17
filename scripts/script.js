@@ -3,7 +3,7 @@ function buscarTexto() {
     // Obtener texto del buscador
     let texto = $('input').val().toLowerCase()
 
-    // Si está vacío, no buscar
+    // Si el buscador está vacío, terminar ejecución
     if (!texto) {
         mostrarResultados(resultados)
         return;
@@ -20,6 +20,7 @@ function buscarTexto() {
 
         var sobreMiEntries = []
 
+        // Buscar el texto en los contenidos de la página "sobremi"
         $(sobreMiData).find("p, h1, h2, h3, li").each(function() {
             let text = $(this).text()
             let textLower = text.toLowerCase()
@@ -28,12 +29,14 @@ function buscarTexto() {
             }
         })
 
+        // Si se han encontrado resultados, guardar los elementos que lo contengan
         if (sobreMiEntries.length) {
             resultados["sobremi"] = sobreMiEntries
         }
 
         var aficionesEntries = []
 
+        // Buscar el texto en los contenidos de la página "aficiones", y guardar los elementos que lo contengan
         $(aficionesData).find("p, h1, h2, h3, li").each(function() {
             let text = $(this).text()
             let textLower = text.toLowerCase()
@@ -42,12 +45,14 @@ function buscarTexto() {
             }
         })
 
+        // Si se han encontrado resultados, guardar los elementos que lo contengan
         if (aficionesEntries.length) {
             resultados["aficiones"] = aficionesEntries
         }
 
         var proyectosEntries = []
-
+    
+        // Buscar el texto en los contenidos de la página "proyectos"
         $(proyectosData).find("p, h1, h2, h3, li").each(function() {
             let text = $(this).text()
             let textLower = text.toLowerCase()
@@ -56,22 +61,27 @@ function buscarTexto() {
             }
         })
 
+        // Si se han encontrado resultados, guardar los elementos que lo contengan
         if (proyectosEntries.length) {
             resultados["proyectos"] = proyectosEntries
         }
 
+        // Mostrar resultados
         mostrarResultados(resultados);
     })
 }
 
 function mostrarResultados(resultados) {
+    // Vaciar contenedor de resultados
     let contenedorResultados = $("section")
     $(contenedorResultados).empty()
 
+    // Si hay resultados, añadir título
     if (Object.keys(resultados).length) {
         $(contenedorResultados).append("<h3>Resultados</h3>")
     }
 
+    // Si hay resultados en "sobremi", añadir los elementos en una sección propia
     if (resultados["sobremi"]) {
         $(contenedorResultados).append("<article></article>")
         var secciónResultados = $(contenedorResultados).find("article").last()
@@ -85,6 +95,7 @@ function mostrarResultados(resultados) {
         })
     }
 
+    // Si hay resultados en "aficiones", añadir los elementos en una sección propia
     if (resultados["aficiones"]) {
         $(contenedorResultados).append("<article></article>")
         var secciónResultados = $(contenedorResultados).find("article").last()
@@ -98,6 +109,7 @@ function mostrarResultados(resultados) {
         })
     }
 
+    // Si hay resultados en "proyectos", añadir los elementos en una sección propia
     if (resultados["proyectos"]) {
         $(contenedorResultados).append("<article></article>")
         var secciónResultados = $(contenedorResultados).find("article").last()
