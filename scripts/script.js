@@ -9,9 +9,9 @@ function buscarTexto() {
         return;
     }
 
-    let sobreMiFetch = fetch("../sobremi.html").then(response => response.text())
-    let aficionesFetch = fetch("../aficiones.html").then(response => response.text())
-    let proyectosFetch = fetch("../proyectos.html").then(response => response.text())
+    let sobreMiFetch = fetch("https://pabvf23.github.io/UX/sobremi.html").then(response => response.text())
+    let aficionesFetch = fetch("https://pabvf23.github.io/UX/aficiones.html").then(response => response.text())
+    let proyectosFetch = fetch("https://pabvf23.github.io/UX/proyectos.html").then(response => response.text())
 
     Promise.all([sobreMiFetch, aficionesFetch, proyectosFetch])
     .then(results => {
