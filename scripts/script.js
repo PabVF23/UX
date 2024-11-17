@@ -5,7 +5,8 @@ function buscarTexto() {
 
     // Si el buscador está vacío, terminar ejecución
     if (!texto) {
-        mostrarResultados(resultados)
+        let contenedorResultados = $("section")
+        $(contenedorResultados).empty()
         return;
     }
 
@@ -76,7 +77,7 @@ function mostrarResultados(resultados) {
     let contenedorResultados = $("section")
     $(contenedorResultados).empty()
 
-    // Si hay resultados, añadir título, si no, indicar que no se encontraron resultados
+    // Si hay resultados, añadir título, si no, indicar que no se encontraron
     if (Object.keys(resultados).length) {
         $(contenedorResultados).append("<h3>Resultados</h3>")
     } else {
