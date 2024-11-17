@@ -76,9 +76,11 @@ function mostrarResultados(resultados) {
     let contenedorResultados = $("section")
     $(contenedorResultados).empty()
 
-    // Si hay resultados, añadir título
+    // Si hay resultados, añadir título, si no, indicar que no se encontraron resultados
     if (Object.keys(resultados).length) {
         $(contenedorResultados).append("<h3>Resultados</h3>")
+    } else {
+        $(contenedorResultados).append("<p>No se encontraron resultados.</p>")
     }
 
     // Si hay resultados en "sobremi", añadir los elementos en una sección propia
