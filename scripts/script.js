@@ -73,16 +73,20 @@ function buscarTexto() {
 }
 
 function mostrarResultados(resultados) {
-    // Vaciar contenedor de resultados
-    let contenedorResultados = $("section")
-    $(contenedorResultados).empty()
+    // Eliminar contenedor de resultados (en caso de estar presente)
+    $("section").remove()
 
-    // Si hay resultados, añadir título, si no, indicar que no se encontraron
-    if (Object.keys(resultados).length) {
-        $(contenedorResultados).append("<h3>Resultados</h3>")
-    } else {
-        $(contenedorResultados).append("<p>No se encontraron resultados.</p>")
+    // Añadir sección de resultados
+    $("input").after("<section></section>")
+    $("section").append("<h3>Resultados</h3>")
+
+    // Si no hay sección de resultados, añadir texto de que no se encontraron
+    if (!Object.keys(resultados).length) {
+        $("section").append("<p>No se encontraron resultados.</p>")
     }
+
+    // Obtener contenedor de resultados
+    let contenedorResultados = $("section")
 
     // Si hay resultados en "sobremi", añadir los elementos en una sección propia
     if (resultados["sobremi"]) {
