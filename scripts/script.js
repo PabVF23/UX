@@ -3,10 +3,10 @@ function buscarTexto() {
     // Obtener texto del buscador
     let texto = $('input').val().toLowerCase()
 
-    // Si el buscador está vacío, terminar ejecución
+    // Si el buscador está vacío, eliminar sección de resultados y terminar ejecución
     if (!texto) {
         let contenedorResultados = $("section")
-        $(contenedorResultados).empty()
+        $(contenedorResultados).remove()
         return;
     }
 
